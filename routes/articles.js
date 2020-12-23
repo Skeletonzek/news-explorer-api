@@ -15,9 +15,9 @@ articleRouter.post('/articles', celebrate({
     date: Joi.string().required(),
     source: Joi.string().required(),
     // eslint-disable-next-line no-useless-escape
-    link: Joi.string().pattern(/https?:\/\/(w{3}\.)?(\w+[\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*)+#?$/).required(),
+    link: Joi.string().pattern(/^https?:\/\/(w{3}\.)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*)\/?$/).required(),
     // eslint-disable-next-line no-useless-escape
-    image: Joi.string().pattern(/https?:\/\/(w{3}\.)?(\w+[\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*)+#?$/).required(),
+    image: Joi.string().pattern(/^https?:\/\/(w{3}\.)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]*)\/?$/).required(),
 
   }),
 }), createArticle);
